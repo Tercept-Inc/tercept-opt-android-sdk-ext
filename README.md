@@ -48,10 +48,10 @@ Integrating Tercept library in your android project
     	  //your code
     }
 ```
-  `networkCode` => DFP network code.
-  `this` => Reference to the activity instance.
-  `String GAID` => Google Advertising ID for the user.
-  `JSONObject params` => (optional) A JSON object of custom parameters. Here we should send any parameters which might help us do a better targeting for ad unit optimisations like web_url, age or any other parameters which are non-standard
+  `networkCode` => DFP network code.  
+  `this` => Reference to the activity instance.  
+  `String GAID` => Google Advertising ID for the user.  
+  `JSONObject params` => (optional) A JSON object of custom parameters. Here we should send any parameters which might help us do a better targeting for ad unit optimisations like web_url, age or any other parameters which are non-standard  
   
   If no custom parameters are to be passed, the following call can also be used.
 ```
@@ -72,7 +72,9 @@ Integrating Tercept library in your android project
                           .
 ```
   All the methods described below need to be called for each instantiation of the class. 
-  At every page where adunits are integrated with Tercept:
+  At every page where adunits are integrated with Tercept  
+
+
 
 
 ### For fetching key values for adunits from tercept server
@@ -84,7 +86,7 @@ Integrating Tercept library in your android project
 
   `ArrayList<String> adunits` => ArrayList of strings representing list of unique ad-unit names. 
 
-  Ideally, we should send in all the ad units at once specific to a particular page which user is viewing.
+  Ideally, we should send in all the ad units at once specific to a particular page which user is viewing.  
 
 
 
@@ -113,11 +115,11 @@ Integrating Tercept library in your android project
 
 
 ### For Logging gam events data 
-  Listen to the following ad events: 
-    onAdClicked, onAdClosed, onAdFailedToLoad, onAdImpression, onAdLeftApplication, onAdLoaded, onAdOpened
+  Listen to the following ad events:   
+    _onAdClicked, onAdClosed, onAdFailedToLoad, onAdImpression, onAdLeftApplication, onAdLoaded, onAdOpened_
 
-  And for IMA ads, there are some additional events:
-    onFirstQuartile, onMidpoint, onThirdQuartile, onStarted, onSkipped
+  And for IMA ads, there are some additional events:  
+    _onFirstQuartile, onMidpoint, onThirdQuartile, onStarted, onSkipped_
 
   There is an enum class called `GAMEVENTS` which exposes all these events to the client while logging the events to Tercept.
  
@@ -143,9 +145,7 @@ Integrating Tercept library in your android project
 
 ```
     terceptOpt.logEvent(adunit, eventName, customEventParams);
-```
-
-  In addition to parameters for 7), we can pass in a JSON object of custom parameters that will be attributed to the event like page URL, category, price etc.
+```  
 
 
 
@@ -156,7 +156,7 @@ Integrating Tercept library in your android project
 ```
     terceptOpt.getEventsData()
 ```
-  Returns a JSON object of all the events logged to be sent to tercept. 
+  Returns a JSON object of all the events logged to be sent to tercept.   
 
 
 
@@ -165,7 +165,7 @@ Integrating Tercept library in your android project
 
 ```
     terceptOpt.sendEventsData();
-```
+```  
 
 
 ### To set custom parameters explicitly
