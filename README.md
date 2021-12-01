@@ -26,7 +26,11 @@ Integrating Tercept library in your android project
 ```
     implementation 'com.tercept.sdk:tercept-android-sdk:4.0.6'
 ```
-  Resync your gradle to get the tercept library
+  Resync your gradle to get the tercept library  
+
+  In case you are unable to implement the above process, one can also download the aar file from this
+  [link](https://github.com/Tercept-Inc/tercept-opt-android-sdk-pub) and going inside the **_Packages_**
+  section 
 
 
  
