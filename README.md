@@ -24,7 +24,7 @@ Integrating Tercept library in your android project
 ```
 2. Inside your build.gradle for the app, in dependencies, include
 ```
-    implementation 'com.tercept.sdk:tercept-android-sdk:4.0.8'
+    implementation 'com.tercept.sdk:tercept-android-sdk:4.0.9'
 ```
   Resync your gradle to get the tercept library  
 
