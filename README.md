@@ -24,7 +24,7 @@ Integrating Tercept library in your android project
 ```
 2. Inside your build.gradle for the app, in dependencies, include
 ```
-    implementation 'com.tercept.sdk:tercept-android-sdk:4.1.0'
+    implementation 'com.tercept.sdk:tercept-android-sdk:4.1.1'
 ```
   Resync your gradle to get the tercept library  
 
@@ -37,9 +37,10 @@ Integrating Tercept library in your android project
  
  
 ## Tercept SDK Usage and Functions
+----
  
  
-### Initialize the SDK by calling init(Activity activity, String GAID, JSONObject params).
+- ## **Initialize the SDK by calling init(Activity activity, String GAID, JSONObject params)**
 ```
     import com.tercept.sdk.TerceptOptimization;
     ...
@@ -52,6 +53,7 @@ Integrating Tercept library in your android project
     	  //your code
     }
 ```
+
   `networkCode` => DFP network code.  
   `this` => Reference to the activity instance.  
   `String GAID` => Google Advertising ID for the user.  
@@ -63,6 +65,7 @@ Integrating Tercept library in your android project
 ```
  
   If you work with different networkCodes in the same app then one has to do initialization for all the different networkCodes
+
   For example:
 ```
     TerceptOptimization terceptOpt1 = new TerceptOptimization(networkCode1)
@@ -78,10 +81,10 @@ Integrating Tercept library in your android project
   All the methods described below need to be called for each instantiation of the class. 
   At every page where adunits are integrated with Tercept  
 
+----
 
 
-
-### For fetching key values for adunits from tercept server
+- ## **For fetching key values for adunits from tercept server**
 ```
     terceptOpt.fetch(adunits);
 ```
@@ -92,10 +95,19 @@ Integrating Tercept library in your android project
 
   Ideally, we should send in all the ad units at once specific to a particular page which user is viewing.  
 
+  If some customParams are required to be sent along with a fetch request, then
+  ```
+      terceptOpt.fetch(adunits, dynamicCustomParams)
+  ```
+
+  where 
+
+  `JSONObject dynamicCustomParams` => customParams for each fetch(which is unique to each fetch request)
 
 
 
-### For getting key values for building the ad request
+----
+- ## **For getting key values for building the ad request**
   Before building each ad request
 
 ```
@@ -118,7 +130,8 @@ Integrating Tercept library in your android project
 
 
 
-### For Logging gam events data 
+-----
+- ## **For Logging gam events data**
   Listen to the following ad events:   
     _onAdClicked, onAdClosed, onAdFailedToLoad, onAdImpression, onAdLeftApplication, onAdLoaded, onAdOpened_
 
@@ -154,7 +167,8 @@ Integrating Tercept library in your android project
 
 
 
-### To check what events are logged currently - FOR DEBUG on client side
+----
+- ## **To check what events are logged currently - FOR DEBUG on client side**
   We can check the events which have been currently logged by tercept to be sent to tercept’s server. This method is mostly for debugging purposes.
 
 ```
@@ -164,7 +178,8 @@ Integrating Tercept library in your android project
 
 
 
-### To send the logged events to tercept server
+----
+- ## **To send the logged events to tercept server**
   At the end of each user session:
 
 ```
@@ -172,7 +187,8 @@ Integrating Tercept library in your android project
 ```  
 
 
-### To set custom parameters explicitly
+----
+- ## **To set custom parameters explicitly**
   Additionally, if custom parameters cannot be sent in UI context, we can set them explicitly as well. This will be sent to the tercept server whenever events data is sent as part of `sendEventsData()`.
 
 ```
